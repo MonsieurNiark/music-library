@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="900" height="430" viewBox="0 0 900 430" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="480" viewBox="0 0 980 480" role="img" aria-labelledby="title desc">
   <title id="title">Album track rating data model</title>
   <desc id="desc">Diagram showing album records connected to album_tracks rows with a nullable rating field constrained from zero to ten.</desc>
   <defs>
@@ -10,46 +10,68 @@
     </marker>
   </defs>
 
-  <rect width="900" height="430" fill="#f8fafc"/>
-  <text x="450" y="46" text-anchor="middle" font-family="Arial, sans-serif" font-size="25" font-weight="700" fill="#0f172a">Track ratings data model</text>
-  <text x="450" y="74" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#475569">Albums own an element collection of tracks through the album_tracks table.</text>
+  <rect width="980" height="480" fill="#f8fafc"/>
+  <text x="490" y="46" text-anchor="middle" font-family="Arial, sans-serif" font-size="25" font-weight="700" fill="#0f172a">Track ratings data model</text>
+  <text x="490" y="74" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#475569">Albums own an element collection of tracks through the album_tracks table.</text>
 
   <g filter="url(#shadow)">
-    <rect x="82" y="116" width="284" height="230" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
-    <rect x="82" y="116" width="284" height="54" rx="8" fill="#0f766e"/>
-    <path d="M82 162 H366 V170 H82 Z" fill="#0f766e"/>
+    <rect x="62" y="112" width="364" height="278" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+    <rect x="62" y="112" width="364" height="54" rx="8" fill="#0f766e"/>
+    <path d="M62 158 H426 V166 H62 Z" fill="#0f766e"/>
     <text x="110" y="151" font-family="Arial, sans-serif" font-size="21" font-weight="700" fill="#ffffff">album</text>
-    <text x="110" y="203" font-family="Arial, sans-serif" font-size="16" fill="#0f172a">id</text>
-    <text x="335" y="203" text-anchor="end" font-family="Arial, sans-serif" font-size="14" fill="#64748b">PK</text>
-    <line x1="106" y1="218" x2="342" y2="218" stroke="#e2e8f0"/>
-    <text x="110" y="248" font-family="Arial, sans-serif" font-size="16" fill="#0f172a">title</text>
-    <text x="110" y="284" font-family="Arial, sans-serif" font-size="16" fill="#0f172a">artist</text>
-    <text x="110" y="320" font-family="Arial, sans-serif" font-size="16" fill="#0f172a">release_year, genre</text>
+    <text x="90" y="197" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#64748b">FIELD</text>
+    <text x="240" y="197" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#64748b">TYPE</text>
+    <text x="350" y="197" text-anchor="end" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#64748b">RULE</text>
+    <line x1="86" y1="212" x2="402" y2="212" stroke="#e2e8f0"/>
+    <text x="90" y="240" font-family="Arial, sans-serif" font-size="16" fill="#0f172a">id</text>
+    <text x="240" y="240" font-family="Arial, sans-serif" font-size="16" fill="#0f172a">Long</text>
+    <text x="350" y="240" text-anchor="end" font-family="Arial, sans-serif" font-size="14" fill="#64748b">PK</text>
+    <text x="90" y="276" font-family="Arial, sans-serif" font-size="16" fill="#0f172a">title</text>
+    <text x="240" y="276" font-family="Arial, sans-serif" font-size="16" fill="#0f172a">String</text>
+    <text x="350" y="276" text-anchor="end" font-family="Arial, sans-serif" font-size="14" fill="#64748b">not null</text>
+    <text x="90" y="312" font-family="Arial, sans-serif" font-size="16" fill="#0f172a">artist.name</text>
+    <text x="240" y="312" font-family="Arial, sans-serif" font-size="16" fill="#0f172a">String</text>
+    <text x="350" y="312" text-anchor="end" font-family="Arial, sans-serif" font-size="14" fill="#64748b">not blank</text>
+    <text x="90" y="348" font-family="Arial, sans-serif" font-size="16" fill="#0f172a">artist.country</text>
+    <text x="240" y="348" font-family="Arial, sans-serif" font-size="16" fill="#0f172a">String</text>
+    <text x="350" y="348" text-anchor="end" font-family="Arial, sans-serif" font-size="14" fill="#64748b">not null</text>
+    <text x="90" y="374" font-family="Arial, sans-serif" font-size="16" fill="#0f172a">releaseYear, genre</text>
+    <text x="240" y="374" font-family="Arial, sans-serif" font-size="16" fill="#0f172a">int, String</text>
+    <text x="350" y="374" text-anchor="end" font-family="Arial, sans-serif" font-size="14" fill="#64748b">required</text>
   </g>
 
   <g filter="url(#shadow)">
-    <rect x="535" y="104" width="292" height="258" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
-    <rect x="535" y="104" width="292" height="54" rx="8" fill="#2563eb"/>
-    <path d="M535 150 H827 V158 H535 Z" fill="#2563eb"/>
-    <text x="563" y="139" font-family="Arial, sans-serif" font-size="21" font-weight="700" fill="#ffffff">album_tracks</text>
-    <text x="563" y="191" font-family="Arial, sans-serif" font-size="16" fill="#0f172a">album_id</text>
-    <text x="796" y="191" text-anchor="end" font-family="Arial, sans-serif" font-size="14" fill="#64748b">FK</text>
-    <line x1="559" y1="206" x2="803" y2="206" stroke="#e2e8f0"/>
-    <text x="563" y="236" font-family="Arial, sans-serif" font-size="16" fill="#0f172a">title</text>
-    <text x="563" y="272" font-family="Arial, sans-serif" font-size="16" fill="#0f172a">duration_seconds</text>
+    <rect x="555" y="104" width="364" height="286" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+    <rect x="555" y="104" width="364" height="54" rx="8" fill="#2563eb"/>
+    <path d="M555 150 H919 V158 H555 Z" fill="#2563eb"/>
+    <text x="583" y="139" font-family="Arial, sans-serif" font-size="21" font-weight="700" fill="#ffffff">album_tracks</text>
+    <text x="583" y="189" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#64748b">FIELD</text>
+    <text x="733" y="189" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#64748b">TYPE</text>
+    <text x="887" y="189" text-anchor="end" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#64748b">RULE</text>
+    <line x1="579" y1="204" x2="895" y2="204" stroke="#e2e8f0"/>
+    <text x="583" y="232" font-family="Arial, sans-serif" font-size="16" fill="#0f172a">album_id</text>
+    <text x="733" y="232" font-family="Arial, sans-serif" font-size="16" fill="#0f172a">Long</text>
+    <text x="887" y="232" text-anchor="end" font-family="Arial, sans-serif" font-size="14" fill="#64748b">FK, not null</text>
+    <text x="583" y="268" font-family="Arial, sans-serif" font-size="16" fill="#0f172a">title</text>
+    <text x="733" y="268" font-family="Arial, sans-serif" font-size="16" fill="#0f172a">String</text>
+    <text x="887" y="268" text-anchor="end" font-family="Arial, sans-serif" font-size="14" fill="#64748b">not blank</text>
+    <text x="583" y="304" font-family="Arial, sans-serif" font-size="16" fill="#0f172a">durationSeconds</text>
+    <text x="733" y="304" font-family="Arial, sans-serif" font-size="16" fill="#0f172a">int</text>
+    <text x="887" y="304" text-anchor="end" font-family="Arial, sans-serif" font-size="14" fill="#64748b">min 1</text>
     <g>
-      <rect x="552" y="292" width="258" height="45" rx="6" fill="#eff6ff" stroke="#93c5fd"/>
-      <text x="563" y="320" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#1d4ed8">rating</text>
-      <text x="796" y="320" text-anchor="end" font-family="Arial, sans-serif" font-size="14" fill="#1d4ed8">nullable, 0-10</text>
+      <rect x="572" y="324" width="330" height="45" rx="6" fill="#eff6ff" stroke="#93c5fd"/>
+      <text x="583" y="352" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#1d4ed8">rating</text>
+      <text x="733" y="352" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#1d4ed8">Integer</text>
+      <text x="887" y="352" text-anchor="end" font-family="Arial, sans-serif" font-size="14" fill="#1d4ed8">nullable, 0-10</text>
     </g>
   </g>
 
-  <path d="M366 230 C424 230 469 230 535 230" fill="none" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
-  <text x="450" y="213" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#334155">one album</text>
-  <text x="450" y="252" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#334155">many tracks</text>
+  <path d="M426 248 C476 248 505 248 555 248" fill="none" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="490" y="231" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#334155">one album</text>
+  <text x="490" y="270" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#334155">many tracks</text>
 
   <g>
-    <rect x="254" y="374" width="392" height="34" rx="8" fill="#ecfeff" stroke="#67e8f9"/>
-    <text x="450" y="397" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#155e75">A missing rating is stored as null; provided values must be between 0 and 10.</text>
+    <rect x="224" y="422" width="532" height="34" rx="8" fill="#ecfeff" stroke="#67e8f9"/>
+    <text x="490" y="445" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#155e75">Track.rating uses nullable Integer; provided values must pass @Min(0) and @Max(10).</text>
   </g>
 </svg>
