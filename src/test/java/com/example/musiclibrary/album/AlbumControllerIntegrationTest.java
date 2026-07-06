@@ -39,8 +39,8 @@ class AlbumControllerIntegrationTest {
                   "releaseYear": 2013,
                   "genre": "Electronic",
                   "tracks": [
-                    { "title": "Give Life Back to Music", "durationSeconds": 275 },
-                    { "title": "Instant Crush", "durationSeconds": 337 }
+                    { "title": "Give Life Back to Music", "durationSeconds": 275, "rating": 9 },
+                    { "title": "Instant Crush", "durationSeconds": 337, "rating": 10 }
                   ]
                 }
                 """;
@@ -50,7 +50,55 @@ class AlbumControllerIntegrationTest {
                         .content(payload))
                 .andExpect(status().isCreated())
                 .andExpect(jsonPath("$.title").value("Random Access Memories"))
+                .andExpect(jsonPath("$.tracks[0].rating").value(9))
+                .andExpect(jsonPath("$.tracks[1].rating").value(10))
                 .andExpect(jsonPath("$.totalDurationSeconds").value(612));
+    }
+
+    @Test
+    void createsAlbumWithUnratedTrack() throws Exception {
+        String payload = """
+                {
+                  "title": "Unrated Sessions",
+                  "artistName": "Example Artist",
+                  "artistCountry": "France",
+                  "releaseYear": 2024,
+                  "genre": "Ambient",
+                  "tracks": [
+                    { "title": "Quiet Start", "durationSeconds": 180 }
+                  ]
+                }
+                """;
+
+        mockMvc.perform(post("/api/albums")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(payload))
+                .andExpect(status().isCreated())
+                .andExpect(jsonPath("$.tracks[0].title").value("Quiet Start"))
+                .andExpect(jsonPath("$.tracks[0].rating").doesNotExist());
+    }
+
+    @Test
+    void rejectsTrackRatingOutsideAcceptedRange() throws Exception {
+        String payload = """
+                {
+                  "title": "Too Much",
+                  "artistName": "Example Artist",
+                  "artistCountry": "France",
+                  "releaseYear": 2024,
+                  "genre": "Rock",
+                  "tracks": [
+                    { "title": "Loud Ending", "durationSeconds": 240, "rating": 11 }
+                  ]
+                }
+                """;
+
+        mockMvc.perform(post("/api/albums")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(payload))
+                .andExpect(status().isBadRequest())
+                .andExpect(jsonPath("$.message").value("Validation failed"))
+                .andExpect(jsonPath("$.details[0]", containsString("rating")));
     }
 
     @Test
