@@ -21,19 +21,19 @@ public class SampleDataLoader {
 
             repository.saveAll(List.of(
                     new Album("Discovery", new Artist("Daft Punk", "France"), 2001, "Electronic", List.of(
-                            new Track("One More Time", 320),
-                            new Track("Digital Love", 301),
-                            new Track("Harder, Better, Faster, Stronger", 224)
+                            new Track("One More Time", 320, 10),
+                            new Track("Digital Love", 301, 9),
+                            new Track("Harder, Better, Faster, Stronger", 224, 9)
                     )),
                     new Album("Kind of Blue", new Artist("Miles Davis", "United States"), 1959, "Jazz", List.of(
-                            new Track("So What", 545),
-                            new Track("Freddie Freeloader", 589),
-                            new Track("Blue in Green", 337)
+                            new Track("So What", 545, 10),
+                            new Track("Freddie Freeloader", 589, 9),
+                            new Track("Blue in Green", 337, 10)
                     )),
                     new Album("Blue", new Artist("Joni Mitchell", "Canada"), 1971, "Folk", List.of(
-                            new Track("Carey", 181),
-                            new Track("California", 228),
-                            new Track("A Case of You", 262)
+                            new Track("Carey", 181, 8),
+                            new Track("California", 228, 9),
+                            new Track("A Case of You", 262, 10)
                     ))
             ));
         };

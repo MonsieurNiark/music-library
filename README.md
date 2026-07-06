@@ -3,6 +3,7 @@
 A Java 21 Spring Boot backend used as a learning project for Codex and GitHub workflows.
 
 The domain is a small music library: albums, artists, tracks, genres, and search.
+Tracks can optionally be rated from 0 to 10.
 
 ## Stack
 
@@ -64,8 +65,8 @@ curl -X POST http://localhost:8080/api/albums \
     "releaseYear": 2013,
     "genre": "Electronic",
     "tracks": [
-      { "title": "Give Life Back to Music", "durationSeconds": 275 },
-      { "title": "Instant Crush", "durationSeconds": 337 }
+      { "title": "Give Life Back to Music", "durationSeconds": 275, "rating": 9 },
+      { "title": "Instant Crush", "durationSeconds": 337, "rating": 10 }
     ]
   }'
 ```
@@ -82,7 +83,7 @@ curl -X PUT http://localhost:8080/api/albums/1 \
     "releaseYear": 2001,
     "genre": "Electronic",
     "tracks": [
-      { "title": "One More Time", "durationSeconds": 320 }
+      { "title": "One More Time", "durationSeconds": 320, "rating": 10 }
     ]
   }'
 ```
