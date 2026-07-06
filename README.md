@@ -5,6 +5,13 @@ A Java 21 Spring Boot backend used as a learning project for Codex and GitHub wo
 The domain is a small music library: albums, artists, tracks, genres, and search.
 Tracks can optionally be rated from 0 to 10.
 
+## Data Model
+
+![Track rating data model](docs/images/track-rating-data-model.svg)
+
+Albums store their tracks in the `album_tracks` collection table. Each track can
+have a nullable `rating` value, constrained from 0 to 10 when present.
+
 ## Stack
 
 - Java 21
